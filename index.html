@@ -43,31 +43,56 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Zoran Džoić</a>.
   </div>
-
+  
   <div class="main-container">
-
+    
+    <form>
     <div class="input-boxes-container">
-      <div>
-        <label for="day">DAY</label>
-        <input placeholder="DD" type="text" id="day" class="input-style input-1">
+      <div id="day-container">
+        <label for="day" id="dayLbl">DAY</label>
+        <input required title="Enter a valid day" placeholder="DD" onblur="isDayFilled()" onkeyup="processDate()" type="text" id="day" class="input-style input-1">
+        <p class="input-is-valid" id="invalid-day">Must be a valid day</p>
+        <p class="input-is-valid" id="empty-day-not-allowed">This field is required</p>
+        <p class="input-is-valid" id="must-be-a-valid-date">Must be a valid date</p>
       </div>
       <div>
-        <label for="month">MONTH</label>
-        <input placeholder="MM" type="text" id="month" class="input-style input-2">
+        <label for="month" id="monthLbl">MONTH</label>
+        <input required title="Enter a valid month" placeholder="MM" onblur="isMonthFilled()" onkeyup="processDate()" type="text" id="month" class="input-style input-2">
+        <p class="input-is-valid" id="invalid-month">Must be a valid month</p>
+        <p class="input-is-valid" id="empty-month-not-allowed">This field is required</p>
       </div>
       <div>
-        <label for="year">YEAR</label>
-        <input placeholder="YYYY" type="text" id="year" class="input-style input-3">
+        <label for="year" id="yearLbl">YEAR</label>
+        <input required title="Enter year in the past" placeholder="YYYY" onblur="isYearFilled()" onkeyup="processDate()" type="text" id="year" class="input-style input-3">
+        <p class="input-is-valid" id="invalid-year">Must be year in the past</p>
+        <p class="input-is-valid" id="empty-year-not-allowed">This field is required</p>
       </div>
     </div>
 
+    </form>
+    <img src="/assets/images/icon-arrow.svg"  alt="arrow" title="Submit date" id="my-btn">
+  
     <div class="hr-line"></div>
 
-    <img src="/assets/images/icon-arrow.svg" alt="arrow">
-
+    <div class="result-container">
+      <div class="result-days">
+        <p id="result-day-num">--</p>
+        <p>days</p>
+      </div>
+      <div class="result-months">
+        <p id="result-month-num">--</p>
+        <p>months</p>
+      </div>
+      <div class="result-years">
+        <p id="result-year-num">--</p>
+        <p>years</p>
+      </div>
+    </div>
+  
+    
   </div>
-
-
+  
+  
 </body>
-
+<script src="script.js"></script>
 </html>

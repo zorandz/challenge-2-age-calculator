@@ -1,40 +1,94 @@
 body {
     background-color: #f0f0f0;
+    box-sizing: border-box;
 }
+
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins-BoldItalic';
+    src: url('/assets/fonts/Poppins-BoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url('/assets/fonts/Poppins-ExtraBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins-ExtraBoldItalic';
+    src: url('/assets/fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins-Italic';
+    src: url('/assets/fonts/Poppins-Italic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins-Regular';
+    src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
+  }
 
 .main-container {
     margin: auto;
     margin-top: 3rem;
     border-radius: 0 0 10rem 0;
-    width: 80%;
+    width: 60%;
+    max-width: 40rem;
     height: 30rem;
     background-color: white;
-    border: 1px solid black;
-    padding: 0.9rem;
+    padding: 1.8rem;
     position: relative;
 }
 
 .main-container img {
     background-color: blueviolet;
-    padding: 0.5rem;
+    padding: 0.9rem;
     border-radius: 50%;
-    width: 4%;
+    width: 2rem;
     position: absolute;
-    right: 8rem;
-    top: 4rem;
+    right: 11%;
+    top: 6.5rem;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.main-container img:hover {
+    transform: scale(1.2);
+}
+
+.main-container img:active {
+    transform: scale(1.4);
+
 }
 
 .input-boxes-container {
     display: flex;
-    margin-right: 10rem;
-
+    margin-right: 20%;
 }
 
 .input-boxes-container label {
     font-weight: 300;
-    font-size: 0.5rem;
-    color: gray;
+    font-family: 'Poppins-Bold';
+    font-size: 0.7rem;
+    color: rgb(57, 56, 56);
+    letter-spacing: 3px;
 }
+
+#day, #month, #year {
+    margin-top: 0.5rem
+}
+
+#dayLbl {
+    margin-bottom: 1rem;
+}
+
 
 .input-style {
     flex-grow: 1;
@@ -57,5 +111,145 @@ body {
     height: 1px;
     background-color: lightgray;
     width: 80%;
-    margin-top: 1.5rem;
+    position: absolute;
+    top: 8.3rem;
 }
+
+.empty-field {
+    color: red !important;
+}
+
+.input-style {
+    text-indent: 1rem;
+    border-radius: 4px;
+    font-size: large;
+    font-family: 'Poppins-Bold';
+
+}
+
+.input-is-valid {
+    display: none;
+}
+
+.input-style:focus {
+    box-sizing: border-box;
+    border:0.4px solid #555;
+    box-shadow: 0 0 5px #646;
+}
+
+.is-not-valid {
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 0.2rem;
+    color: red;
+    margin-bottom: -1rem;
+    display: block !important;
+    
+}
+
+.input-invalid {
+    outline: red solid 0.2px;
+}
+
+.empty-not-allowed {
+    font-size: 0.7rem;
+    font-style: italic;
+    margin-top: 0.2rem;
+    color: red;
+    margin-bottom: -1rem;
+    display: block !important;
+}
+
+.result-container {
+    font-weight: 900;
+    font-size: 5rem;
+    font-family: 'Poppins-ExtraBoldItalic';
+}
+
+#result-day-num, #result-month-num, #result-year-num {
+    color: #854dff;
+    margin-right: 1rem;
+}
+
+.result-days {
+    display: flex;
+    margin-top: -2rem;
+}
+
+.result-months {
+    display: flex;
+    margin-top: -11rem;
+}
+
+.result-years {
+    display: flex;
+    margin-top: -11rem;
+}
+
+@media (max-width: 1113px) {
+    .main-container {
+        margin: auto;
+        width: 100%;
+    }
+
+    .input-is-valid {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .input-is-valid {
+      font-size: 0.7rem;
+
+    }
+  }
+
+  @media (max-width: 480px) {
+    .result-container {
+        font-size: 4.5rem;
+    }
+
+    .hr-line  {
+        margin: 5rem 0 1rem 0;
+
+    }
+
+    .main-container img {
+        border-radius: 50%;
+        position: absolute;
+        right: 50%;
+        top: 9rem;
+        cursor: pointer;
+        transform: scale(1);
+        transition: transform 0.2s;
+    }
+
+    .input-boxes-container {
+        display: flex;
+        margin-right: 10%;
+    }
+  }
+
+  @media (max-width: 433px) {
+    .result-container {
+        font-weight: 900;
+        font-size: 3.5rem;
+        font-family: 'Poppins-ExtraBoldItalic';
+    }
+
+    .result-days {
+        margin-top: 1rem;
+    }
+    
+    .result-months {
+        margin-top: -8rem;
+    }
+    
+    .result-years {
+        margin-top: -8rem;
+    }
+  }
+
+  #must-be-a-valid-date {
+    margin-top: 0.6rem;
+  }
