@@ -35,7 +35,6 @@ body {
 
 .main-container {
     margin: auto;
-    margin-top: 3rem;
     border-radius: 0 0 10rem 0;
     width: 60%;
     max-width: 40rem;
@@ -151,6 +150,10 @@ body {
     outline: red solid 0.2px;
 }
 
+#empty-day-not-allowed, #empty-month-not-allowed, #empty-year-not-allowed {
+    font-family: 'Poppins-BoldItalic';
+}
+
 .empty-not-allowed {
     font-size: 0.7rem;
     font-style: italic;
@@ -158,6 +161,7 @@ body {
     color: red;
     margin-bottom: -1rem;
     display: block !important;
+    font-family: 'Poppins-BoldItalic';
 }
 
 .result-container {
@@ -193,7 +197,7 @@ body {
     }
 
     .input-is-valid {
-      font-size: 1rem;
+      font-size: 0.8rem;
     }
   }
 
@@ -252,4 +256,5 @@ body {
 
   #must-be-a-valid-date {
     margin-top: 0.6rem;
+    font-family: 'Poppins-BoldItalic';;
   }
