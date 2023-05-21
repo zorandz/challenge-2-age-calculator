@@ -189,7 +189,7 @@ function isMonthFilled() {
 function isYearFilled() {
     if (checkYear(document.getElementById("year").value)) {
         document.getElementById("empty-year-not-allowed").classList.remove("is-not-valid");
-        document.getElementById("monthLbl").classList.remove("empty-field");
+        document.getElementById("yearLbl").classList.remove("empty-field");
         document.getElementById("invalid-year").classList.remove("is-not-valid");
         document.getElementById("year").classList.remove("input-invalid");
     }
